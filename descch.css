@@ -1,0 +1,733 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100%;
+    --s: 200px; /* control the size */
+    --c1: #1d1d1d;
+    --c2: #4e4f51;
+    --c3: #3c3c3c;
+  
+    background: repeating-conic-gradient(
+          from 30deg,
+          #0000 0 120deg,
+          var(--c3) 0 180deg
+        )
+        calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+      repeating-conic-gradient(
+        from 30deg,
+        var(--c1) 0 60deg,
+        var(--c2) 0 120deg,
+        var(--c3) 0 180deg
+      );
+    background-size: var(--s) calc(var(--s) * 0.577);
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    height: 375px;
+  }
+  
+  .imagen {
+    margin: 0 auto; /* Esto centra horizontalmente el elemento */
+    max-width: 200px; /* Establece el ancho máximo del contenedor */
+    max-height: 200px; /* Establece la altura máxima del contenedor */
+    margin-bottom: 20px;
+  }
+  
+  .imagen img {
+    width: 100%; /* Esto hace que la imagen ocupe todo el ancho del contenedor */
+    height: auto; /* Esto asegura que la altura se ajuste automáticamente según el ancho */
+    max-width: 100%; /* Limita el tamaño máximo de la imagen al ancho del contenedor */
+    max-height: 100%; /* Limita el tamaño máximo de la imagen a la altura del contenedor */
+  }
+  
+  nav ul {
+    list-style-type: none;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .btn {
+    font-size: 1.14rem;
+    padding: 1rem 2.5rem;
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: rgb(14, 14, 26);
+    color: rgb(234, 234, 234);
+    font-weight: 700;
+    transition: 0.6s;
+    box-shadow: 0px 0px 60px #1f4c65;
+    -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+  }
+  
+  .btn:active {
+    scale: 0.92;
+  }
+  
+  .btn:hover {
+    background: rgb(2,29,78);
+    background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+    color: rgb(4, 4, 38);
+  }
+  
+  .card {
+    margin-top: 100px;
+    margin-left: 20px;
+    position: relative;
+    width: 500px;
+    height: 400px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card svg {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  }
+  
+  .card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card:hover .card__content {
+    transform: rotateX(0deg);
+  }
+  
+  .card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .card:hover svg {
+    scale: 0;
+  }
+  
+  .card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+  }
+  
+  
+  footer {
+    background-color: #333; 
+    color: #fff; 
+    padding: 20px; 
+    margin-top: 40px;
+  }
+  
+  .aqua {
+    color: white;
+    text-align: center;
+  }
+  
+  .content {
+  display: grid;
+  place-items: center;
+  margin: auto;
+  background-color: #fff;
+  width: 400px;
+  height: 40px;
+  }
+  
+  .title {
+  color: #111;
+  }
+  
+  .caja-redondeada {
+  display: grid;
+  place-items: center;
+  margin: auto;
+  width: 1250px; 
+  height: 2000px; 
+  background-color: #fff;
+  border-radius: 10px;
+  }
+  
+  .card {
+  margin-top: 100px;
+  margin-left: 20px;
+  position: relative;
+  width: 400px;
+  height: 300px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #ffffff80;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card svg {
+  width: 48px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  }
+  
+  .card__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card:hover .card__content {
+  transform: rotateX(0deg);
+  }
+  
+  .card:hover svg {
+  scale: 0;
+  }
+  
+  .foto {
+  width: 100%;
+  height: 100%;
+  }
+  
+  .tabla {
+  margin-top: -150px;
+  }
+  
+  .tabla .card {
+  margin: 100px;
+  margin-left: 50px;
+  }
+  
+  .texto {
+  background-color: #e6f7ff; 
+  padding: 20px;
+  border-radius: 20px;
+  margin-left: -50px;
+  margin-right: 20px;
+  width: 625px;
+  height: 300px;
+  transition: transform 0.3s ease; 
+  }
+  
+  .texto:hover {
+  transform: translateX(10px); 
+  }
+  
+  .texto2 {
+  background-color: #e6f7ff; 
+  padding: 20px;
+  border-radius: 20px;
+  margin-left: 10px;
+  margin-right: -20px;
+  width: 625px;
+  height: 300px;
+  transition: transform 0.3s ease; 
+  }
+  
+  .texto2:hover {
+  transform: translateX(10px); /* Movemos el elemento 10px hacia la izquierda cuando se hace hover */
+  }
+  
+  .card2 {
+  margin-top: 0px;
+  margin-left: 120px;
+  position: relative;
+  width: 400px;
+  height: 300px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #ffffff80;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card2 svg {
+  width: 48px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card2:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  }
+  
+  .card2__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card2:hover .card__content {
+  transform: rotateX(0deg);
+  }
+  
+  .card2:hover svg {
+  scale: 0;
+  }
+  
+  @media (max-width: 1200px) {
+    header {
+        padding: 15px;
+        height: 460px; /* Ampliar el header */
+    }
+  
+    .imagen {
+        max-width: 200px;
+        max-height: 200px;
+    }
+  
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+        text-align: center; /* Centrar los elementos del menú de navegación */
+    }
+  
+    .btn {
+        display: flex;
+        font-size: 1.25rem;
+        padding: 0.5rem 2rem;
+        margin-bottom: 8px; /* Ajustar el margen de los botones */
+    }
+  
+    .card, .card2 {
+        width: 320px; /* Ajustar tamaño de las tarjetas */
+        height: 270px; /* Ajustar tamaño de las tarjetas */
+        margin: 15px auto; /* Centrar las tarjetas */
+    }
+  
+    .texto, .texto2 {
+        width: 445px; /* Ajustar tamaño del texto */
+        height: 270px; /* Ajustar tamaño del texto */
+        margin: 15px auto; /* Centrar el texto */
+        font-size: 14px; /* Ajustar tamaño de la letra */
+        padding: 12px; /* Ajustar el padding */
+    }
+  
+    .tabla {
+        margin-top: -110px; /* Ajustar el margen superior de la tabla */
+    }
+  
+    .tabla .card {
+        width: 320px; /* Ajustar tamaño de las tarjetas en la tabla */
+        height: 270px; /* Ajustar tamaño de las tarjetas en la tabla */
+        margin: 10px auto; /* Centrar las tarjetas de la tabla */
+    }
+  
+    .tabla .card svg {
+        width: 28px; /* Ajustar tamaño de los íconos en las tarjetas de la tabla */
+    }
+  
+    .tabla .card__content {
+        padding: 12px; /* Ajustar el padding de las tarjetas de la tabla */
+    }
+  
+    .tabla .card__title {
+        font-size: 14px; /* Ajustar tamaño del título en las tarjetas de la tabla */
+    }
+  
+    .tabla .card__description {
+        font-size: 12px; /* Ajustar tamaño de la descripción en las tarjetas de la tabla */
+    }
+  
+    .caja-redondeada {
+        width: 980px; /* Ajustar tamaño de la caja redondeada */
+        height: 1600px; /* Ajustar tamaño de la caja redondeada */
+    }
+  
+    .texto {
+        margin-left: 10px;
+    }
+  
+    .content {
+      width: 500px;
+      font-size: 15px;
+    }
+  }
+  
+  
+  @media (max-width: 992px) {
+    header {
+        padding: 15px;
+        height: 380px; /* Ampliar el header */
+    }
+  
+    .imagen {
+        max-width: 120px;
+        max-height: 120px;
+    }
+  
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+        text-align: center; /* Centrar los elementos del menú de navegación */
+    }
+  
+    .btn {
+        font-size: 1.25rem;
+        padding: 0.5rem 2rem;
+        margin: 15px auto; /* Centrar los botones */
+        display: flex;
+    }
+  
+    .card, .card2 {
+        width: 300px; /* Ajustar tamaño de las tarjetas */
+        height: 250px; /* Ajustar tamaño de las tarjetas */
+        margin: 15px auto; /* Centrar las tarjetas */
+    }
+  
+    .texto, .texto2 {
+        width: 425px; /* Ajustar tamaño del texto */
+        height: 250px; /* Ajustar tamaño del texto */
+        margin: 15px auto; /* Centrar el texto */
+        font-size: 14px; /* Ajustar tamaño de la letra */
+        padding: 12px; /* Ajustar el padding */
+    }
+  
+    .tabla {
+        margin-top: -110px; /* Ajustar el margen superior de la tabla */
+    }
+  
+    .tabla .card {
+        width: 300px; /* Ajustar tamaño de las tarjetas en la tabla */
+        height: 250px; /* Ajustar tamaño de las tarjetas en la tabla */
+        margin: 10px auto; /* Centrar las tarjetas de la tabla */
+    }
+  
+    .tabla .card svg {
+        width: 28px; /* Ajustar tamaño de los íconos en las tarjetas de la tabla */
+    }
+  
+    .tabla .card__content {
+        padding: 12px; /* Ajustar el padding de las tarjetas de la tabla */
+    }
+  
+    .tabla .card__title {
+        font-size: 14px; /* Ajustar tamaño del título en las tarjetas de la tabla */
+    }
+  
+    .tabla .card__description {
+        font-size: 12px; /* Ajustar tamaño de la descripción en las tarjetas de la tabla */
+    }
+  
+    .caja-redondeada {
+        width: 900px; /* Ajustar tamaño de la caja redondeada */
+        height: 1500px; /* Ajustar tamaño de la caja redondeada */
+    }
+  
+    .texto {
+      margin-left: 10px;
+    }
+  
+    .content {
+      width: 450px;
+      font-size: 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    header {
+        padding: 15px;
+        height: 440px; /* Ampliar el header */
+    }
+  
+    .imagen {
+        max-width: 120px;
+        max-height: 120px;
+    }
+  
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+        text-align: center; /* Centrar los elementos del menú de navegación */
+    }
+  
+    .btn {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
+        margin: 15px auto; /* Centrar los botones */
+        display: block;
+    }
+  
+    .card, .card2 {
+        width: 220px; /* Ajustar tamaño de las tarjetas */
+        height: 165px; /* Ajustar tamaño de las tarjetas */
+        margin: 15px auto; /* Centrar las tarjetas */
+    }
+  
+    .texto, .texto2 {
+        width: 320px; /* Ajustar tamaño del texto */
+        height: 200px; /* Ajustar tamaño del texto */
+        margin: 15px auto; /* Centrar el texto */
+        font-size: 10px; /* Ajustar tamaño de la letra */
+        padding: 12px; /* Ajustar el padding */
+    }
+  
+    .tabla {
+        margin-top: -110px; /* Ajustar el margen superior de la tabla */
+    }
+  
+    .tabla .card {
+        width: 150px; /* Ajustar tamaño de las tarjetas en la tabla */
+        height: 120px; /* Ajustar tamaño de las tarjetas en la tabla */
+        margin: 10px auto; /* Centrar las tarjetas de la tabla */
+    }
+  
+    .tabla .card svg {
+        width: 28px; /* Ajustar tamaño de los íconos en las tarjetas de la tabla */
+    }
+  
+    .tabla .card__content {
+        padding: 12px; /* Ajustar el padding de las tarjetas de la tabla */
+    }
+  
+    .tabla .card__title {
+        font-size: 14px; /* Ajustar tamaño del título en las tarjetas de la tabla */
+    }
+  
+    .tabla .card__description {
+        font-size: 12px; /* Ajustar tamaño de la descripción en las tarjetas de la tabla */
+    }
+  
+    .caja-redondeada {
+        width: 600px; /* Ajustar tamaño de la caja redondeada */
+        height: 1200px; /* Ajustar tamaño de la caja redondeada */
+    }
+  
+    .texto {
+      margin-left: -50px;
+    }
+  
+    .content {
+      width: 400px;
+      font-size: 12px;
+    }
+  }
+  
+  
+  @media (max-width: 576px) and (min-width: 320px) {
+    header {
+        padding: 15px;
+        height: 340px; /* Ampliar el header */
+    }
+  
+    .imagen {
+        max-width: 100px;
+        max-height: 100px;
+    }
+  
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+        text-align: center; /* Centrar los elementos del menú de navegación */
+    }
+  
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.5rem;
+        margin: 10px auto; /* Centrar los botones */
+        display: block;
+    }
+  
+    .card, .card2 {
+        width: 180px; /* Reducir tamaño de las tarjetas */
+        height: 135px; /* Reducir tamaño de las tarjetas */
+        margin: 10px auto; /* Centrar las tarjetas */
+    }
+  
+    .texto, .texto2 {
+        width: 280px; /* Reducir tamaño del texto */
+        height: 180px; /* Reducir tamaño del texto */
+        margin: 10px auto; /* Centrar el texto */
+    }
+  
+    .tabla {
+        margin-top: -5px; /* Ajustar el margen superior de la tabla */
+    }
+  
+    .tabla .card {
+        width: 120px; /* Reducir tamaño de las tarjetas en la tabla */
+        height: 100px; /* Reducir tamaño de las tarjetas en la tabla */
+        margin: 5px auto; /* Centrar las tarjetas de la tabla */
+    }
+  
+    .tabla .card svg {
+        width: 24px; /* Reducir tamaño de los íconos en las tarjetas de la tabla */
+    }
+  
+    .tabla .card__content {
+        padding: 10px; /* Reducir el padding de las tarjetas de la tabla */
+    }
+  
+    .tabla .card__title {
+        font-size: 12px; /* Reducir tamaño del título en las tarjetas de la tabla */
+    }
+  
+    .tabla .card__description {
+        font-size: 10px; /* Reducir tamaño de la descripción en las tarjetas de la tabla */
+    }
+  
+    .caja-redondeada {
+        width: 550px; /* Reducir tamaño de la caja redondeada */
+        height: 1020px; /* Reducir tamaño de la caja redondeada */
+    }
+  
+    .texto {
+      font-size: 8px;
+      margin-left: -50px;
+    }
+  
+    .texto2 {
+      font-size: 8px;
+    }
+    
+    .content {
+      width: 300px;
+      font-size: 10px;
+    }
+  }
+  
+  @media (min-width: 1201px) and (max-width: 2000px) {
+    header {
+        padding: 15px;
+        height: 460px; /* Ampliar el header */
+    }
+  
+    .imagen {
+        max-width: 200px;
+        max-height: 200px;
+    }
+  
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+        text-align: center; /* Centrar los elementos del menú de navegación */
+    }
+  
+    .btn {
+        display: flex;
+        font-size: 1.25rem;
+        padding: 0.5rem 2rem;
+        margin-bottom: 8px; /* Ajustar el margen de los botones */
+    }
+  
+    .card, .card2 {
+        width: 320px; /* Ajustar tamaño de las tarjetas */
+        height: 270px; /* Ajustar tamaño de las tarjetas */
+        margin: 15px auto; /* Centrar las tarjetas */
+    }
+  
+    .texto, .texto2 {
+        width: 445px; /* Ajustar tamaño del texto */
+        height: 270px; /* Ajustar tamaño del texto */
+        margin: 15px auto; /* Centrar el texto */
+        font-size: 14px; /* Ajustar tamaño de la letra */
+        padding: 12px; /* Ajustar el padding */
+    }
+  
+    .tabla {
+        margin-top: -110px; /* Ajustar el margen superior de la tabla */
+    }
+  
+    .tabla .card {
+        width: 320px; /* Ajustar tamaño de las tarjetas en la tabla */
+        height: 270px; /* Ajustar tamaño de las tarjetas en la tabla */
+        margin: 10px auto; /* Centrar las tarjetas de la tabla */
+    }
+  
+    .tabla .card svg {
+        width: 28px; /* Ajustar tamaño de los íconos en las tarjetas de la tabla */
+    }
+  
+    .tabla .card__content {
+        padding: 12px; /* Ajustar el padding de las tarjetas de la tabla */
+    }
+  
+    .tabla .card__title {
+        font-size: 14px; /* Ajustar tamaño del título en las tarjetas de la tabla */
+    }
+  
+    .tabla .card__description {
+        font-size: 12px; /* Ajustar tamaño de la descripción en las tarjetas de la tabla */
+    }
+  
+    .caja-redondeada {
+        width: 980px; /* Ajustar tamaño de la caja redondeada */
+        height: 1600px; /* Ajustar tamaño de la caja redondeada */
+    }
+  
+    .texto {
+        margin-left: 10px;
+    }
+  
+    .content {
+      width: 500px;
+    }
+  }
